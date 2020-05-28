@@ -8,6 +8,8 @@ import person from '../person/doctor.png';
 import TextField from '@material-ui/core/TextField';
 import Emoticon from './emoji.png';
 import thumb from './like.png';
+import { css } from 'glamor';
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 const style  = {
     paper: {
@@ -16,7 +18,6 @@ const style  = {
     },
     
   };
-
 class Chattingpage extends React.Component{
     constructor(props){
         super(props);
@@ -26,7 +27,6 @@ class Chattingpage extends React.Component{
         }
         this.handleClose = this.handleClose.bind(this);
         this.handleopen = this.handleopen.bind(this);
-        this.mesRef = React.createRef();
     }
 
     handleClose (e){
@@ -41,11 +41,7 @@ class Chattingpage extends React.Component{
             anchorEl: e.currentTarget,
             open:Boolean(e.currentTarget)
         })
-        this.scrollToBottom();
     } 
-    scrollToBottom = () => {
-		this.mesRef.current.scrollTop = this.mesRef.current.scrollHeight;
-	};
     render(){
         const {handleClose,handleopen} =this;
         const {classes} = this.props;
@@ -79,7 +75,7 @@ class Chattingpage extends React.Component{
                             <p>어린콩</p>
                             </div>
                         </div>
-                        <div className="chat_scroll" ref={this.mesRef}>
+                        <ScrollToBottom className="chat_scroll" scrollViewClassName="chat_hover">
                             <div classes="_chat_on">
                                 <div className="chat_img">
                                     <img src={person} height="30px" width="30px"/>
@@ -114,7 +110,7 @@ class Chattingpage extends React.Component{
                                     동물의 숲 싸게판다고 하셔서 연략했어용 
                                 </div>
                             </div>
-                        </div>
+                            </ScrollToBottom>
                     <div className="bottommenu">
                     <label>입력</label>
                     <TextField id="outlined-basic" variant="outlined" placeholder="입력하세요."/>
