@@ -76,6 +76,12 @@
     max-width: 250px;
     margin-bottom: 5px;
 }
+.cloud pre{
+    font-size: 15px;
+    white-space: pre-wrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .cloud::after{
     border-top:15px solid #f1f0f0;
     border-left: 15px solid transparent;
@@ -112,6 +118,12 @@
     max-width: 250px;
     
 }
+.cloud_me pre{
+    font-size: 15px;
+    white-space: pre-wrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .cloud_me::after{
     border-top:15px solid #e1eaff;
     border-left: 0px solid transparent;
@@ -140,7 +152,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.MuiOutlinedInput-root {
+.bottommenu .MuiOutlinedInput-root {
     position: relative;
     border-radius: 4px;
     margin-top: 5px;
@@ -152,10 +164,38 @@
 .bottommenu label{
     position: absolute;
     bottom: 13px;
-    right: 307px;
+    right: 309px;
     font-weight: bold;
 }
 .bottommenu .MuiIconButton-label {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.sc-bwzfXH.HJDRz {
+    position: static;
+    opacity: 1;
+    -webkit-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+    margin-top: 0;
+    border: 1px solid #F1F1F1;
+    border-radius: 2px;
+    background: white;
+    box-shadow: 3px 3px 5px #BFBDBD;
+    width: 340px;
+    height: 350px;
+    overflow-y: scroll;
+    z-index: 100;
+}
+.emoji{
+    float: right;
+    margin-right: 9px;
+}
+.emoji .MuiIconButton-label {
     width: 28px;
     height: 28px;
     display: flex;

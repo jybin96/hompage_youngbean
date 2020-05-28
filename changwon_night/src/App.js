@@ -10,6 +10,7 @@ import Life from './Board/life';
 import './app.css';
 import Icon from './icon/icon';
 import Emailmodal from './icon/modal';
+import Emoji from './icon/chatting/emoji';
 function App() {
   return (
     <div>

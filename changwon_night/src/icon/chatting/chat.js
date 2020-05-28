@@ -10,6 +10,7 @@ import Emoticon from './emoji.png';
 import thumb from './like.png';
 import { css } from 'glamor';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import Emoji from './emoji';
 
 const style  = {
     paper: {
@@ -23,12 +24,29 @@ class Chattingpage extends React.Component{
         super(props);
         this.state = {
             anchorEl : null,
-            open:false
+            open:false,
+            chat:'',
         }
         this.handleClose = this.handleClose.bind(this);
         this.handleopen = this.handleopen.bind(this);
+        this.keyboard = this.keyboard.bind(this);
+        this.onChange =this.onChange.bind(this);
     }
-
+    onChange(e){
+        this.setState({
+            chat: e.target.value,
+          });
+          console.log(this.state.chat);
+          
+    }
+    keyboard(e){
+        console.log(e.keyCode);
+        if(e.keyCode == 13){
+            console.log(`엔터키누름 :  ${this.state.chat}`);    //여기서 전송
+            
+        }
+       
+    }
     handleClose (e){
        
         this.setState({
@@ -43,7 +61,7 @@ class Chattingpage extends React.Component{
         })
     } 
     render(){
-        const {handleClose,handleopen} =this;
+        const {handleClose,handleopen,keyboard,onChange} =this;
         const {classes} = this.props;
         return(
             <div>
@@ -81,12 +99,16 @@ class Chattingpage extends React.Component{
                                     <img src={person} height="30px" width="30px"/>
                                 </div>
                                 <div className="cloud">
-                                    안녕하세요 물건보고 연락드렸습니다 ㅎㅎ
+                                    <pre>
+                                    안녕하세요 물건보고 연락드렸습니다 ㅎㅎ asdasdasdasdasd asdasdasd       
+                                    </pre>
                                 </div>
                             </div>
                             <div classes="_chat_me">
                                 <div className="cloud_me">
-                                아 넵 ㅎㅎ 무슨 물건보고 오셨나요 ? ㅋㅋㅋ 
+                                    <pre>
+                                    아 넵 ㅎㅎ 무슨 물건보고 오셨나요 ?  ㅋㅋㅋ 
+                                    </pre>
                                 </div>
                             </div>
                             <div classes="_chat_on">
@@ -94,12 +116,16 @@ class Chattingpage extends React.Component{
                                     <img src={person} height="30px" width="30px"/>
                                 </div>
                                 <div className="cloud">
+                                    <pre>
                                     동물의 숲 싸게판다고 하셔서 연략했어용 
+                                    </pre>
                                 </div>
                             </div>
                             <div classes="_chat_me">
                                 <div className="cloud_me">
-                                아 넵 ㅎㅎ 무슨 물건보고 오셨나요 ? ㅋㅋㅋ 
+                                    <pre>
+                                    아 넵 ㅎㅎ 무슨 물건보고 오셨나요 ? ㅋㅋㅋ 
+                                    </pre>
                                 </div>
                             </div>
                             <div classes="_chat_on">
@@ -107,16 +133,16 @@ class Chattingpage extends React.Component{
                                     <img src={person} height="30px" width="30px"/>
                                 </div>
                                 <div className="cloud">
+                                    <pre>
                                     동물의 숲 싸게판다고 하셔서 연략했어용 
+                                    </pre>
                                 </div>
                             </div>
                             </ScrollToBottom>
                     <div className="bottommenu">
                     <label>입력</label>
-                    <TextField id="outlined-basic" variant="outlined" placeholder="입력하세요."/>
-                    <IconButton  color="inherit" size="small">
-                        <img src={Emoticon} width="28px" height="28px"/>
-                    </IconButton>
+                    <TextField id="outlined-basic" variant="outlined" placeholder="입력하세요." onKeyDown={keyboard} onChange={onChange} value={this.state.chat}/>
+                    <Emoji/>
                     <IconButton  color="inherit" size="small" >
                         <img src={thumb} width="28px" height="28px"/> 
                     </IconButton>       
