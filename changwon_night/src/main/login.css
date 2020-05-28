@@ -1,16 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap');
 .logbox{
     border: 1px;
-    width: 253px;
-    height: 155px;
-    padding-right: 13px;
-    padding-left: 21px;
-    background-color: rgb(244, 248, 210);
-    margin-left: 150px;
-    margin-top: 20px;
+    width: 408.200px;
+    height: 437px;
+    
     
 }
+.logbox p{
+    width: 150px;
+    margin-top: 0px;
+    margin-left: 130px;
+    margin-right:0px ;
+    margin-bottom: 50px;
+    font-family: 'Gamja Flower', cursive;
+    font-size: 35px;
+}
+.id{
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.id p{
+    width: 150px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+}
+.pw{
+    margin-left: 30px;
+}
+.pw p{
+    width: 160px;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+}
 .idpwbox{
-    position: absolute;
     border:1px ;
     width: 172px;
     height: 86px;
@@ -18,13 +46,19 @@
     padding-top: 15px;
 
 }
+.idpwbox input{
+    margin-top: 1px;
+    padding-left: 4px;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    width: 300px;
+    height: 30px;
+}
 #userid{
     margin-bottom: 5px;
 }
-.idpwbox input{
-    width: 172px;
-    height: 30px;
-}
+
 .idpw{
     border: 1px ;
     width:300px;
@@ -32,49 +66,79 @@
 }
 .loginsubmit{
     border: 1px;
-    position: absolute;
     transform: translate(240%,-100%);
     width: 75px;
     height: 38px;
     
 }
-.loginsubmit button  {
-    margin-left: 5px;
-    border-radius: 10px;
-    background-color: #f8585b;
-    color:#fff;
-    text-decoration: none;
-    width: 70px;
-    height: 38px;
-    font-size: 15px;
+#sign button{
+    margin-top: 3px;
+    margin-left: 0px;
+    height: 40px;
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: 'Jua', sans-serif;
+}
+.loginsubmit button{
+    margin-top: 3px;
+    margin-left: 0px;
+    height: 40px;
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: 'Jua', sans-serif;
+    position: absolute;
+    left: 70px;
+    top: 106.5px;
 }
 #sign{
     list-style: none;
-    width: 253px;
-    height: 8px;
+    width: 358.200px;
+    height: 100px;
     padding-left: 0px;
     margin-top: 1px;
+    margin-left: 30px;
 }
 #sign li{
     float: left;
-    width: 33%;
-    margin:1px;
-    padding-right: 5px;
+    width: 50px;
+    margin-right: 60px;
+    margin-top: 30px;
 }
-#sign li a{
-    
-    width:80px;
-    background-color: #f8585b;
-    border: none;
-    color:#fff;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 10px;
-
+.pp{
+    height: 100px;
+    width: 550px;
+    float: left;
+}
+.pp p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float: left;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 30px;
+    font-family: 'Gamja Flower', cursive;
+    font-weight: bold;
+}
+.partynight{
+    height: 100px;
+    width: 250px;
+    margin-left: 150px;
+    float: left;
+}
+.pp2{
+    height: 200px;
+    width: 550px;
+}
+#party{
+    float: left;
+}
+#dialog{
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
 }

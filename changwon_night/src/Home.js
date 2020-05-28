@@ -45,13 +45,6 @@ class Home extends Component {
               <Campus/>
               <Life/>
             </div>
-            <Editor
-              hideModeSwitch='true'
-              initialEditType='wysiwyg'
-              plugins={[colorSyntax]}
-              ref={this.editorRef}
-            />
-            <button onClick={this.handleClickButton}>Click!</button>
           </>
           );
     }

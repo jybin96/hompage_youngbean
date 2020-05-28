@@ -1,7 +1,13 @@
 /* eslint-disable */       //eslint경고 삭제
 import React from 'react';
 import './login.css'
-
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Error from '@material-ui/icons/Error';
+import Check from '@material-ui/icons/Check';
+import Checkbox from '@material-ui/core/Checkbox';
 
 class Longin extends React.Component{
     constructor(props){
@@ -19,7 +25,11 @@ class Longin extends React.Component{
             pwcheck:'',
             nicknamecheck:'',
             check:false,
-            pwinput:true
+            pwinput:true,
+            checking1:false,
+            checking2:false,
+            checking3:false,
+            checking4:false
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -47,12 +57,12 @@ class Longin extends React.Component{
         }
         if(this.state.idcheck==='')
         {
-            alert("아이디 중복체크를 하세요");
+            toast.error(<div><Error/><div className="toast"><p>아이디 중복체크를 하세요</p></div></div>);
         }
         else if(this.state.pwcheck===''){
-            alert("비밀번호 확인을 하세요");
+            toast.error(<div><Error/><div className="toast"><p>비밀번호 확이을 하세요.</p></div></div>);
         }else if(this.state.check===false){
-            alert("이메일 인증을 받으세요!");
+            toast.error(<div><Error/><div className="toast"><p>이메일 인증을 받으세요</p></div></div>);
         }
         else{//post전송
             fetch('http://localhost:3001/log',{
@@ -62,8 +72,8 @@ class Longin extends React.Component{
                 },
                 body:JSON.stringify(post)
             })
-            .then(alert("회원가입 완료"))
-            .then(this.props.history.push("/"));
+            .then(toast.success(<div><Check/><div className="toast"><p>회원가입을 축하드립니다.</p></div></div>))
+            .then(window.setTimeout(this.props.handlesub(), 2000))
         }
         
     }
@@ -73,7 +83,7 @@ class Longin extends React.Component{
         e.preventDefault();
         if((special_pattern.test(this.state.id)===true)||(this.state.id.search(/\s/) != -1)||this.state.id.length < 5||this.state.id.length > 20)
         {
-            alert("5~20자의 영문 숫자만 사용가능합니다");
+            toast.error(<div><Error/><div className="toast"><p>5~20자의 영문숫자만 사용 가능합니다.</p></div></div>);
         }
         else{
             const post = {
@@ -81,7 +91,10 @@ class Longin extends React.Component{
             }
             if(this.state.id==='')
             {
-                alert("아이디 입력요망");
+                toast.error(<div><Error/><div className="toast"><p>아이디를 입력하세요.</p></div></div>);
+                this.setState({
+                    checking1:false
+                })
             }else{
                 fetch('http://localhost:3001/user',{
                 method:"post",
@@ -93,12 +106,17 @@ class Longin extends React.Component{
             .then(res => res.json())
             .then(json => {
               if (json[0] === undefined) {
-                alert("사용가능 한 아이디입니다");
+                toast.success(<div><Check/><div className="toast"><p>사용할수있는 아이디입니다.</p></div></div>);
                 this.setState({
-                  idcheck: this.state.id 
-                })}
+                    checking1:true,
+                    idcheck:this.state.id
+                })
+                }
                else {
-                alert("이미 존재하는 아이디입니다");
+                toast.error(<div><Error/><div className="toast"><p>이미있는 아이디입니다.</p></div></div>);
+                this.setState({
+                    checking1:false
+                })
               }
             });
             }
@@ -108,14 +126,14 @@ class Longin extends React.Component{
         
 
     };
-    checknickname(e){  //닉네임 중복검사
+    checknickname(e){  //아이디 중복검사
         e.preventDefault();
         
             const post = {
                 nickname:this.state.nickname
             }
            
-                fetch('http://localhost:3001/nickname',{
+                fetch('http://localhost:3001/user',{
                 method:"post",
                 headers : {
                     'content-type':'application/json'
@@ -125,12 +143,16 @@ class Longin extends React.Component{
             .then(res => res.json())
             .then(json => {
               if (json[0] === undefined) {
-                alert("사용가능 한 별명입니다");
+                toast.success(<div><Check/><div className="toast"><p>사용할수있는 별명입니다.</p></div></div>);
                 this.setState({
-                  nicknamecheck: this.state.nickname
+                  nicknamecheck: this.state.nickname,
+                  checking2:true
                 })}
                else {
-                alert("이미 존재하는 별명입니다");
+                toast.error(<div><Error/><div className="toast"><p>이미있는 별명입니다.</p></div></div>);
+                this.setState({
+                    checking2:false
+                })
               }
             });
         }
@@ -142,25 +164,34 @@ class Longin extends React.Component{
 
         if(!pattern1.test(this.state.pw) || !pattern2.test(this.state.pw) || !pattern3.test(this.state.pw) || this.state.pw.length < 8)
         {
-            alert("비밀번호 형식은 8자리 이상 특수문자 영문자 숫자로 구성되어야합니다!")
+            toast("비밀번호 형식은 8자리 이상 특수문자 영문자 숫자로 구성되어야합니다!")
+            this.setState({
+                checking3:false
+            })
         }
         else{
 
             if(this.state.pw==='')
             {
-                alert('비밀번호를 입력해주세요!');
+                toast.error(<div><Error/><div className="toast"><p>비밀번호를 입력하세요.</p></div></div>);
+                this.setState({
+                    checking3:false
+                })
             }
             else if(this.state.pw===this.state.pw2)
             {
-
+                toast.success(<div><Check/><div className="toast"><p>비밀번호가 일치합니다.</p></div></div>);
                 this.setState({
                 pwdiv: '비밀번호가 일치합니다',
                 pwinput:false,
-                pwcheck:this.state.pw
+                pwcheck:this.state.pw,
+                checking3:true
             })
             }else{
+                toast.error(<div><Error/><div className="toast"><p>비밀번호가 일치하지않습니다.</p></div></div>);
                 this.setState({
                     pwdiv: '비밀번호가 일치하지않습니다.',
+                    checking3:false
                 })
             }
         }
@@ -172,13 +203,13 @@ class Longin extends React.Component{
 
         e.preventDefault();
         if((special_pattern.test(this.state.email)===true)||(this.state.email.search(/\s/) != -1)){
-            alert("형식이 옳바르지 않습니다")
+            toast.error(<div><Error/><div className="toast"><p>형식이 올바르지 않습니다.</p></div></div>);
 
         }else{
             const email = {
                 email:this.state.email
             }
-            alert(`${this.state.email}@changwon.ac.kr으로 인증번호 확인하세요! (1~2분소요가능)`)
+            toast(`${this.state.email}@changwon.ac.kr으로 인증번호 확인하세요! (1~2분소요가능)`)
             fetch('http://localhost:3001/email',{
                 method:"post",
                 headers : {
@@ -197,68 +228,75 @@ class Longin extends React.Component{
         }
         
     }
-    checkemail2(e){ //인증번호 확인
+    checkemail2(e){
         e.preventDefault();
         if((this.state.number)*1===this.state.emailsearch)
         {
-            alert("확인완료");
+            toast.success(<div><Check/><div className="toast"><p>인증완료</p></div></div>);
             this.setState({
-                check:true
+                check:true,
+                checking4:true
             })
         }
         else
         {
-            alert("다시확인");
+            toast.error(<div><Error/><div className="toast"><p>이메일인증번호를 다시확인하세요.</p></div></div>);
+            this.setState({
+                checking4:false
+            })
         }
         
     }
-    render(){//회원가입
+    
+    render(){
         const {id,nickname,pw,pw2,email,number} = this.state;
         const {onChange,onSubmit} = this;
         return(
-            <div className="form">
-                <div className="title">
-                    <h3>회원가입을 환영합니다!</h3>
+            <div className="form" noValidate autoComplete="off">
+                <div className="titlea">
+                    <p>창원대의밤</p>
                 </div>
                 <form onSubmit={onSubmit}>
                     <div className="idinput">
-                        <label>아이디:</label>
-                        <input type="text" name="id" value={id} onChange={onChange}/>
-                        <button onClick={this.checkid}>중복체크</button>
+                        <p>아이디</p>
+                        <Checkbox checked={this.state.checking1} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
+                        <TextField id="outlined-basic"variant="outlined"size="small" label="ID" type="text" name="id" value={id} onChange={onChange}/>
+                        <Button variant="outlined" color="primary" onClick={this.checkid}>중복체크</Button>
                     </div>
                     <div className="nickinput">
-                        <label>별명:</label>
-                        <input type="text" name="nickname" value={nickname} onChange={onChange}/>
-                        <button onClick={this.checknickname}>중복체크</button>
+                        <p>별명</p>
+                        <Checkbox checked={this.state.checking2} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
+                        <TextField id="outlined-basic"variant="outlined"size="small" label="nickname" type="text" name="nickname" value={nickname} onChange={onChange}/>
+                        <Button variant="outlined" color="primary" onClick={this.checknickname}>중복체크</Button>
                     </div>
                     <div className="pwinput">
-                        <label>비밀번호:</label>
-                        <input type="password" name="pw" value={pw} onChange={onChange} disabled={(this.state.pwinput)? "" : "disabled"}/>
+                        <p>비밀번호 입력하세요</p>
+                        <TextField id="outlined-basic"variant="outlined"size="small" label="password"type="password" name="pw" value={pw} onChange={onChange} />
                     </div>
                     <div className="pw2input">
-                        <label>비밀번호확인:</label>
-                        <input type="password" name="pw2" value={pw2} onChange={onChange} disabled={(this.state.pwinput)? "" : "disabled"}/>
-                        <div id="pwdiv">
-                        <p>{this.state.pwdiv}</p>
-                        </div>
-                        <button  onClick={this.checkpw}>비밀번호확인</button>
+                        <p>비밀번호 확인하세요</p>
+                        <Checkbox checked={this.state.checking3} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
+                        <TextField id="outlined-basic"variant="outlined"size="small" label="password" type="password" name="pw2" value={pw2} onChange={onChange} />
+                        <Button  variant="outlined" color="primary" onClick={this.checkpw}>확인</Button>
                     </div>
                     <div className="emailinput">
-                        <label>이메일:</label>
-                        <input type="text" name="email" value={email} onChange={onChange} placeholder="e-mail"/>
+                        <p>이메일 인증</p>
+                        <TextField id="outlined-basic"variant="outlined"size="small" label="email" type="text" name="email" value={email} onChange={onChange} placeholder="e-mail"/>
                         <div className="changwonackr">
                             <p>@changwon.ac.kr</p>
                         </div>
-                        <button onClick={this.checkemail}>인증보내기</button>
+                        <Button variant="outlined" color="primary" onClick={this.checkemail}>인증보내기</Button>
                         <div className="emailsearch">
-                            <label>인증번호입력:</label>
-                            <input type="text" name="number" value={number} onChange={onChange} placeholder="6자리입력"/>
-                            <button onClick={this.checkemail2}>인증확인</button>
+                            <Checkbox checked={this.state.checking4} inputProps={{ 'aria-label': 'primary checkbox' }}color="primary" />
+                            <TextField id="outlined-basic"variant="outlined"size="small" label="인증번호" type="text" name="number" value={number} onChange={onChange} placeholder="6자리입력"/>
+                            <Button variant="outlined" color="primary" onClick={this.checkemail2}>인증확인</Button>
                         </div>
                     </div>
-                    <button type="submit" id="submit" >회원가입</button>
+                    <Button variant="contained" color="primary"type="submit" id="submit" >회원가입</Button>
                 </form>
+                <ToastContainer/>
             </div>
+            
         )
     }
 

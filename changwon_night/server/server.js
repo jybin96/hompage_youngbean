@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'dydals0905',
+    password: 'snsk3779@',
     database: 'changwonnightdiagram'
   });
 connection.connect(); //mysql 연결
@@ -89,7 +89,7 @@ app.post('/email',function(req,res){
         service:'gmail',
         auth:{
             user:'wjddudqls96@gmail.com',
-            pass: 'snsk3779'  
+            pass: 'snsk3779@'  
         }
     });
 

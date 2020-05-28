@@ -4,10 +4,11 @@ import './index.css';
 import Root from './Root';
 import * as serviceWorker from './serviceWorker';
 
+
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Root />
-  </React.StrictMode>,
+    </React.Fragment>,
   document.getElementById('root')
 );
 serviceWorker.unregister();

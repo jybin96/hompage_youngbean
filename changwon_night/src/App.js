@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Home from './Home';
 import Admin from './admin';
 import Signin from  './signin/signin';
 import Notice from './Board/notice';
@@ -9,12 +8,12 @@ import Employment from './Board/employment';
 import Campus from './Board/campus';
 import Life from './Board/life';
 import './app.css';
-
-
+import Icon from './icon/icon';
+import Emailmodal from './icon/modal';
 function App() {
   return (
     <div>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Icon}/>
       <Route exact path="/signinpage" component={Signin}/>
       <Route exact path="/admin" component={Admin}/>
       <Route exact path ="/notice" component={Notice}/>
