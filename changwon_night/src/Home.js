@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import Login from './main/main';
-import Search from './search/search';
-import Top from './top5/top5';
-import Notice from './Board/notice';
-import Community from './Board/community';
-import Employment from './Board/employment';
-import Campus from './Board/campus';
-import Life from './Board/life';
-
+import Top_AppBar from './appbar/appbar'
 import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
-
-import { Editor } from '@toast-ui/react-editor';
-import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
-
+import './home.css'
+import Moon from './wallpaperbetter.jpg';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
+import Centergrid2 from './mainpaper/grid2';
+const style  = {
+  root: {
+      height: 180,
+      width:1530
+  },
+  
+};
 class Home extends Component {
   editorRef = React.createRef();
  
@@ -31,24 +31,72 @@ class Home extends Component {
 }
   
     render(){
+      const {classes} = this.props;
         return (
-          <>
-            <div className="App">
-              <div className="middle">
-                <Login history={this.props.history}/>
-                <Top/>
+          <div>
+            <Top_AppBar/>
+            <div className="home_image">
+              <div className="illust">
+                <img src={Moon} width="800px" height="180px"/>
               </div>
-              <Search/>
-              <Notice/>
-              <Community/>
-              <Employment/>
-              <Campus/>
-              <Life/>
             </div>
-          </>
+            <div className="home_body">
+              <div className="home_paper">
+                <Centergrid2/>
+              </div>
+            </div>
+            <div className="home_bottom">
+              <div className="home_bottom_paper">
+                <Paper elevation={0} className={this.props.classes.root}>
+                  <div className="bottom1">
+                    <p className="bottom_title">고객지원</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>   
+                  </div>
+                  <div className="bottom2">
+                    <p className="bottom_title">커뮤니티</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>
+                  </div>
+                  <div className="bottom3">
+                    <p className="bottom_title">캠퍼스</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>
+                  </div>
+                  <div className="bottom4">
+                    <p className="bottom_title">생활정보</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>
+                  </div>
+                  <div className="bottom5">
+                    <p className="bottom_title">취업</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>
+                  </div>
+                  <div className="bottom6">
+                    <p className="bottom_title">공지사항</p>
+                    <p><a href="">만든이</a></p>
+                    <p><a href="">제휴&광고</a></p>
+                    <p><a href="">이용약관</a></p>
+                    <p><a href="">개인정보이용방침</a></p>
+                  </div>
+                </Paper>
+              </div>
+            </div>
+          </div>
           );
     }
   
 }
 
-export default Home;
+export default withStyles(style)(Home);

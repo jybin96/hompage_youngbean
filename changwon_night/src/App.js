@@ -11,10 +11,12 @@ import './app.css';
 import Icon from './icon/icon';
 import Emailmodal from './icon/modal';
 import Emoji from './icon/chatting/emoji';
+import Top_AppBar from './appbar/appbar';
+import Home from './Home';
 function App() {
   return (
     <div>
-      <Route exact path="/" component={Icon}/>
+      <Route exact path="/" component={Home}/>
       <Route exact path="/signinpage" component={Signin}/>
       <Route exact path="/admin" component={Admin}/>
       <Route exact path ="/notice" component={Notice}/>

@@ -14,8 +14,8 @@ import Emoji from './emoji';
 
 const style  = {
     paper: {
-        height: 400,
-        width: 350,
+        height: "auto",
+        width: "auto",
     },
     
   };
