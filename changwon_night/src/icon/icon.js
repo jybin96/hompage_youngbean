@@ -93,17 +93,6 @@ class Icon extends React.Component{
                     label={this.state.checklogin ? 'Logout' : 'Login'}
                     />
                 </FormGroup>
-              
-                <Dialog open={this.state.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                    <DialogContent>
-                    <Login/>
-                    </DialogContent>
-                    <DialogActions>
-                    <Button onClick={handleClose} variant="contained" color="secondary">
-                        <p>cancle</p>
-                    </Button>
-                    </DialogActions>
-                </Dialog>
             </div>
         )
     }

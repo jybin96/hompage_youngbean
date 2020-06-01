@@ -8,6 +8,12 @@ import Moon from './wallpaperbetter.jpg';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import Centergrid2 from './mainpaper/grid2';
+import Baner1 from './baner1.jpg';
+import Baner2 from './baner2.jpg';
+import Waagle from './waagle.png';
+import Changwonmenu from './changwonmenu/changwon';
+
+
 const style  = {
   root: {
       height: 180,
@@ -22,7 +28,6 @@ class Home extends Component {
     this.editorRef.current.getRootElement().classList.add('my-editor-root');
   };
 
-
   componentDidMount(){
     window.history.pushState(null, null, window.location.href);
     window.onpopstate = function(event) {
@@ -33,7 +38,7 @@ class Home extends Component {
     render(){
       const {classes} = this.props;
         return (
-          <div>
+          <div className="root">
             <Top_AppBar/>
             <div className="home_image">
               <div className="illust">
@@ -45,9 +50,16 @@ class Home extends Component {
                 <Centergrid2/>
               </div>
             </div>
+            <div className="baner2">
+              <img src={Baner2} height="300px" width="150px"/>
+            </div>
+            <div className="waagle">
+              <Changwonmenu/>
+            </div>
             <div className="home_bottom">
               <div className="home_bottom_paper">
                 <Paper elevation={0} className={this.props.classes.root}>
+                  
                   <div className="bottom1">
                     <p className="bottom_title">고객지원</p>
                     <p><a href="">만든이</a></p>

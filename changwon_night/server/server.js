@@ -51,7 +51,6 @@ app.post('/admin',function(req,res){
             
             admin.nickname = rows[0].nickname;
             console.log(admin.nickname);
-            
             res.send(admin);
             
         }else{                        //쿼리 비번이랑 받아온 비번이랑 안맞을떄

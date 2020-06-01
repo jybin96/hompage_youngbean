@@ -13,6 +13,7 @@
     "@toast-ui/editor-plugin-color-syntax": "^1.0.0",
     "@toast-ui/react-editor": "^2.0.1",
     "body-parser": "^1.19.0",
+    "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-alert": "^7.0.1",
     "react-dom": "^16.13.1",

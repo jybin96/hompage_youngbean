@@ -17,11 +17,22 @@ import ImformationMenu from './ImformationMenu';
 import EmploymentMenu from './EmploymentMenu';
 import './appbar.css';
 import Switchbar from '../icon/switchbar';
+import jQuery from "jquery";
+
+
 class Top_AppBar extends Component {
+  
+  componentDidMount(){
+    window.$ = window.jQuery = jQuery;
+    window.$(window).scroll(function() {
+      window.$('.header').css({left: 0 - window.$(this).scrollLeft()});
+  });
+  }
   render(){
+    const {classes} = this.props;
   return (
     <div>
-    <AppBar position="absolute">
+    <AppBar position="fixed" className="header"> 
       <Toolbar variant="regular" >
           <Typography variant="h6" color="inherit">
             창원대의 밤
@@ -31,9 +42,13 @@ class Top_AppBar extends Component {
           <ImformationMenu/>
           <EmploymentMenu/>
           <NoticeMenu/>
-        <div className = 'login_icon'>
-        <Switchbar/>
-        </div>       
+          
+          <div className="switchbar">
+          <MenuItem>
+          <Switchbar/>
+        </MenuItem>
+          </div>
+        
       </Toolbar>
     </AppBar>
   </div>
@@ -41,4 +56,4 @@ class Top_AppBar extends Component {
 }
 }
 
-export default Top_AppBar;
+export default (Top_AppBar);

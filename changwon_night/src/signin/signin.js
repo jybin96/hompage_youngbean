@@ -282,9 +282,9 @@ class Longin extends React.Component{
                     <div className="emailinput">
                         <p>이메일 인증</p>
                         <TextField id="outlined-basic"variant="outlined"size="small" label="email" type="text" name="email" value={email} onChange={onChange} placeholder="e-mail"/>
-                        <div className="changwonackr">
-                            <p>@changwon.ac.kr</p>
-                        </div>
+                        <span className="changwonackr">
+                            @changwon.ac.kr
+                        </span>
                         <Button variant="outlined" color="primary" onClick={this.checkemail}>인증보내기</Button>
                         <div className="emailsearch">
                             <Checkbox checked={this.state.checking4} inputProps={{ 'aria-label': 'primary checkbox' }}color="primary" />

@@ -63,11 +63,11 @@ class Login extends React.Component{
                 this.setState({
                     admin:true,
                     nickname:json.nickname,
-                    open:false
+                    open:false,
+                    
                 })
-                window.localStorage.setItem('id',this.state.id)
-                window.localStorage.setItem('nickname',this.state.nickname)
-                window.localStorage.setItem('admin',this.state.admin)
+                this.props.authsubmit(true)
+                this.props.handleClose();
                 alert("로그인 완료");
                 
             }
@@ -111,9 +111,7 @@ class Login extends React.Component{
                             <p>패스워드 입력하세요</p>
                             <TextField id="outlined-basic"variant="outlined"size="small" label="password" type="password"  name="pw"  value={pw} onChange={onChange}/> 
                         </div>
-                    <div className="loginsubmit">
-                    <Button variant="contained" color="primary" type="submit">로그인</Button>
-                    </div>
+                        <Button variant="contained" color="primary" type="submit">로그인</Button>
                     </form>
                        
                     <ul id="sign">
@@ -123,11 +121,6 @@ class Login extends React.Component{
                             <DialogContent>
                                 <Longin handlesub={handlesub}/>
                             </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose} variant="contained" color="secondary">
-                                <p>cancle</p>
-                                </Button>
-                            </DialogActions>
                         </Dialog>
                         <Dialog open={this.state.signin} onClose={handleClose} aria-labelledby="form-dialog-title">
                             <DialogContent>
@@ -153,6 +146,9 @@ class Login extends React.Component{
                         </li>
                         <li>
                         <Button variant="contained" color="primary">ID/PW찾기</Button>
+                        </li>
+                        <li>
+                        
                         </li>
                     </ul>
                 </div>

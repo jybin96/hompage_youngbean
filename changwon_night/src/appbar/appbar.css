@@ -1,3 +1,7 @@
+.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.header.mui-fixed.MuiPaper-elevation4{
+    width: auto;
+    left: 0px;
+}
 .campus .MuiButton-label {
   
     display: inherit;
@@ -22,6 +26,7 @@
     color: white;
     min-width: 60px;
 }
+
 .imformation .MuiButton-label {
   
     display: inherit;
@@ -50,17 +55,22 @@ body {
     }
     
 }
+.switchbar li{
+    margin-left: 150px;
+}
+
 .login_icon {
-    padding-right: 10%;
-    right: 3px;
+    
+    right: 200px;
     position: absolute;
 }
 .MuiToolbar-root .MuiToolbar-regular .MuiToolbar-gutters{
     max-height: 100px;
+   
 }
 .MuiTypography-h6 {
-    padding-right: 1%;
-    padding-left: 10%;
+    padding-right: 120px;
+    padding-left: 200px;
     font-size: 1.25rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 500;
@@ -76,7 +86,7 @@ body {
     max-height: 30px;
 }
 .MuiButtonBase-root.MuiButton-root.MuiButton-text {
-    padding: 6px 20px;
+    padding: 6px 25px;
 }
 .MuiButton-root {
     color: rgba(0, 0, 0, 0.87);

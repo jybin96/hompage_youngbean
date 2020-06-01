@@ -174,7 +174,7 @@
     font-weight: bold;
 }
 .emailinput button{
-    margin-left: 140px;
+    margin-left: 10px;
     margin-top: 3px;
     padding-left: 5px;
     padding-right: 5px;
@@ -199,19 +199,18 @@
     margin-left: 13px;
     width: 125px;
     height: 20px;
-    position: absolute;
-    top: 464px;
-    right: 136px;
+    font-size: 14px;
+    margin-left: 10px;
+    font-family: 'Jua', sans-serif;
 }
 .changwonackr p{
-    font-size: 14px;
-    margin-left: 0px;
-    font-family: 'Jua', sans-serif;
+   
     
 }
 #submit{
     margin-top: 25px;
-    margin-left: 310px;
+    margin-left: 330px;
+    margin-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;

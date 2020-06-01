@@ -39,3 +39,20 @@ button p{
     width: 120px;
     height: 88px;
 }
+.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button{
+    width: 400px;
+    overflow: hidden;
+    font-size: 1rem;
+    box-sizing: border-box;
+    min-height: 48px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 6px;
+    white-space: nowrap;
+    letter-spacing: 0.00938em;
+    padding-bottom: 6px;
+}
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-edgeEnd{
+    float: right;
+}
