@@ -39,7 +39,7 @@ button p{
     width: 120px;
     height: 88px;
 }
-.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button{
+.switchbar li.MuiButtonBase-root.MuiListItem-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button{
     width: 400px;
     overflow: hidden;
     font-size: 1rem;
@@ -52,7 +52,13 @@ button p{
     white-space: nowrap;
     letter-spacing: 0.00938em;
     padding-bottom: 6px;
+    margin-left: 100px;
 }
 .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-edgeEnd{
     float: right;
+}
+#dialog .MuiDialog-paper {
+    margin: 32px;
+    position: relative;
+    height: 400px;
 }

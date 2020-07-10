@@ -42,12 +42,12 @@ class Top_AppBar extends Component {
           <ImformationMenu/>
           <EmploymentMenu/>
           <NoticeMenu/>
-          
-          <div className="switchbar">
+
+          <span className="switchbar">
           <MenuItem>
           <Switchbar/>
-        </MenuItem>
-          </div>
+          </MenuItem>
+          </span>
         
       </Toolbar>
     </AppBar>

@@ -88,6 +88,7 @@ class CampusMenu extends Component {
                   <Paper>
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                        <MenuItem onClick={handleClose}>너나의 동료가되라</MenuItem>
                         <MenuItem onClick={handleClose}>동아리홍보</MenuItem>
                         <MenuItem onClick={handleClose}>지도</MenuItem>
                         <MenuItem onClick={handleClose}>학식표</MenuItem>

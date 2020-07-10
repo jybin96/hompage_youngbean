@@ -1,4 +1,4 @@
-.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.header.mui-fixed.MuiPaper-elevation4{
+ .MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.header.mui-fixed.MuiPaper-elevation4{
     width: auto;
     left: 0px;
 }
@@ -8,6 +8,7 @@
     align-items: inherit;
     justify-content: inherit;
     color: white;
+    font-weight: bold;
     min-width: 60px;
 }
 .community .MuiButton-label {
@@ -16,6 +17,7 @@
     align-items: inherit;
     justify-content: inherit;
     color: white;
+    font-weight: bold;
     min-width: 60px;
 }
 .employment .MuiButton-label {
@@ -24,6 +26,7 @@
     align-items: inherit;
     justify-content: inherit;
     color: white;
+    font-weight: bold;
     min-width: 60px;
 }
 
@@ -33,6 +36,7 @@
     align-items: inherit;
     justify-content: inherit;
     color: white;
+    font-weight: bold;
     min-width: 60px;
 }
 .notice .MuiButton-label {
@@ -41,6 +45,7 @@
     align-items: inherit;
     justify-content: inherit;
     color: white;
+    font-weight: bold;
     min-width: 60px;
 }
 body {
@@ -55,8 +60,11 @@ body {
     }
     
 }
+.switchbar .MuiTouchRipple-root{
+
+}
 .switchbar li{
-    margin-left: 150px;
+    margin-left: 90px;
 }
 
 .login_icon {
@@ -102,4 +110,11 @@ body {
     letter-spacing: 0.02857em;
     text-transform: uppercase;
     min-width: 100px;
+}
+.header.MuiAppBar-colorPrimary {
+    color: white;
+    background-color: #5c4d99;
+}
+.MuiPaper-elevation4 {
+    box-shadow: 0px;
 }

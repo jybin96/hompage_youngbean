@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import './search.css'
-
+import searchimg from './search.png';
 class Search extends Component {
     render(){
         return(
-            <div className="searchbox">
-                <div className="search">
-                    <p>찾기</p>
-                </div>
+            <div>
                 <div className="box">
-                    <input type="text" placeholder="검색어"></input>
+                    <input type="text" placeholder="검색"></input>
                 </div>
             </div>
         )

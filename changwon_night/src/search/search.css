@@ -29,7 +29,19 @@
 }
 .box input{
     margin-left: 10px;
-    width: 220px;
-    height: 35px;
+    height: 48px;
     margin-top: 10px;
+    outline: none;
+    border-radius: 24px;
+    border-color: white;
+    border: 0px;
+    background-color: #dcdcdc;
+    width: 737px;
+    padding-left: 60px;
+    font-size: 16px;
+    background-image: url('./search.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x:20px;
 }

@@ -86,8 +86,9 @@ class ImformationMenu extends Component {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>사고팔기</MenuItem>
-                    <MenuItem onClick={handleClose}>알바</MenuItem>
+                    <MenuItem onClick={handleClose}>창밤마켓</MenuItem>
+                    <MenuItem onClick={handleClose}>창방</MenuItem>
+                    <MenuItem onClick={handleClose}>알바창국</MenuItem>
                     <MenuItem onClick={handleClose}>맛집</MenuItem>
                   </MenuList>
                 </ClickAwayListener>

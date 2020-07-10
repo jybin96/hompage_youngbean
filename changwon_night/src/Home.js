@@ -12,7 +12,7 @@ import Baner1 from './baner1.jpg';
 import Baner2 from './baner2.jpg';
 import Waagle from './waagle.png';
 import Changwonmenu from './changwonmenu/changwon';
-
+import Search from './SearchBar/min';
 
 const style  = {
   root: {
@@ -38,12 +38,10 @@ class Home extends Component {
     render(){
       const {classes} = this.props;
         return (
-          <div className="root">
+          <div>
             <Top_AppBar/>
-            <div className="home_image">
-              <div className="illust">
-                <img src={Moon} width="800px" height="180px"/>
-              </div>
+            <div className="searchbox">
+              <Search/>
             </div>
             <div className="home_body">
               <div className="home_paper">

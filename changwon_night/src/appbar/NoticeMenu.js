@@ -86,9 +86,9 @@ class NoticeMenu extends Component {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <MenuItem onClick={handleClose}>창밤 공지사항</MenuItem>
                     <MenuItem onClick={handleClose}>학교 공지사항</MenuItem>
-                    <MenuItem onClick={handleClose}>과 공지사항</MenuItem>
-                    <MenuItem onClick={handleClose}>XXX</MenuItem>
+                    <MenuItem onClick={handleClose}>학과 공지사항</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

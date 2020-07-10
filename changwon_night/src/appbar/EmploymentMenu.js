@@ -87,9 +87,9 @@ class EmploymentMenu extends Component {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>취업</MenuItem>
-                    <MenuItem onClick={handleClose}>XX1</MenuItem>
-                    <MenuItem onClick={handleClose}>XX2</MenuItem>
+                    <MenuItem onClick={handleClose}>취업공고</MenuItem>
+                    <MenuItem onClick={handleClose}>취업후기</MenuItem>
+                    <MenuItem onClick={handleClose}>꼰대게시판</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

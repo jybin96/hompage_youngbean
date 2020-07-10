@@ -12,7 +12,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Emailmodal from './modal';
 import Notimodal from './modal2';
 import Favormodal from './modal3';
-
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 
@@ -29,6 +30,7 @@ class Switchbar extends React.Component{
         super(props);
         this.state={
             open:false,
+            open2:false,
             checklogin:false,
             email:false,
             anchorEl:null,
@@ -40,6 +42,8 @@ class Switchbar extends React.Component{
         this.handleChange2 = this.handleChange2.bind(this);
         this.authsubmit = this.authsubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleClose2 = this.handleClose2.bind(this);
+        this.handleClickOpen = this.handleClickOpen.bind(this);
     }
     handleChange (e) {
         if(this.state.auth===true){
@@ -75,27 +79,50 @@ class Switchbar extends React.Component{
               auth:auth2
           })
       }
+      handleClickOpen (){
+        this.setState({
+            open2:true
+        })
+    }
+    handleClose2 (){
+        this.setState({
+            open2:false
+        })
+    }
     render(){
         const {classes} = this.props;
         return(
-            <div>
+            <div >
                 <FormGroup aria-label ="position" row>
                         <FormControlLabel 
                             control={<Switch checked={this.state.auth}  onChange={this.handleChange} aria-label="login switch" />}
                             label={this.state.auth ? 'Logout' : 'Login'}
                         />
                         {this.state.auth && 
-                    <div >
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={this.state.handlMenu}
-                            color="inherit"
-                        >
+                    <div className="menuicon">
+                        <IconButton  color="inherit" onClick={this.handleClickOpen} >
                             <AccountCircle />
                         </IconButton>
+                        <Dialog
+                            open={this.state.open2}
+                            onClose={this.handleClose}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            id="dialog"
+                        >
+                            <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                            </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                            <Button onClick={this.handleClose2} color="primary">
+                                Disagree
+                            </Button>
+                            <Button onClick={this.handleClose2} color="primary" autoFocus>
+                                Agree
+                            </Button>
+                            </DialogActions>
+                        </Dialog>
                         <Favormodal/>
                         <Emailmodal/>
                         <Notimodal/>

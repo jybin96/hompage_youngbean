@@ -88,8 +88,10 @@ class CommuityMenu extends Component {
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                     <MenuItem onClick={handleClose}>자유게시판</MenuItem>
-                    <MenuItem onClick={handleClose}>XX게시판1</MenuItem>
-                    <MenuItem onClick={handleClose}>XX게시판2</MenuItem>
+                    <MenuItem onClick={handleClose}>익명게시판</MenuItem>
+                    <MenuItem onClick={handleClose}>새내기게시판</MenuItem>
+                    <MenuItem onClick={handleClose}>연예상담소</MenuItem>
+                    <MenuItem onClick={handleClose}>정치게시판</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

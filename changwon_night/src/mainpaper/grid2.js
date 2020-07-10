@@ -89,19 +89,19 @@ class Centergrid2 extends React.Component{
                 <hr/>
                 <div className="box2">
                 <Typography align="left" variant="h5" >
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>오늘 너무 기쁘다 ㅎㅎ[32]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>우리는 하나다 고로 존재한다.][5]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>오늘 인강듣다가 정휘제 똥쌈 ㅋㅋ[2]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>그시절의 우리 웃고울었던[4]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>오늘 불꽃집회 안하노...[1]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>여기 사이트 망함? ㄹㅇㅋㅋ[5]</li></a>
                 
-                <a href="/"><li>[내용][댓글수]</li></a>
+                <a href="/"><li>송용민 오빠 너무 멋있어요[2]</li></a>
                 
                 </Typography>
                 </div>
