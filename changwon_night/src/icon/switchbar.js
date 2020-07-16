@@ -15,7 +15,7 @@ import Favormodal from './modal3';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-
+import Profile_check from './profile/profile_check';
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
@@ -103,25 +103,13 @@ class Switchbar extends React.Component{
                         <IconButton  color="inherit" onClick={this.handleClickOpen} >
                             <AccountCircle />
                         </IconButton>
-                        <Dialog
-                            open={this.state.open2}
-                            onClose={this.handleClose}
-                            aria-labelledby="alert-dialog-title"
-                            aria-describedby="alert-dialog-description"
-                            id="dialog"
-                        >
-                            <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-                            </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                            <Button onClick={this.handleClose2} color="primary">
-                                Disagree
-                            </Button>
-                            <Button onClick={this.handleClose2} color="primary" autoFocus>
-                                Agree
-                            </Button>
-                            </DialogActions>
+                        <Dialog open={this.state.open2} onClose={this.handleClose2} aria-labelledby="form-dialog-title" className="profile_check_button">
+                        <DialogContent>
+                        <Profile_check/>
+                        </DialogContent>                                 
+                        <DialogActions>                
+                        <Button className = "cancel"variant="outlined" color="primary" onClick={this.handleClose2}>닫기</Button>
+                        </DialogActions>
                         </Dialog>
                         <Favormodal/>
                         <Emailmodal/>

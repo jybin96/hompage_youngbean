@@ -1,6 +1,6 @@
 /* eslint-disable */       //eslint경고 삭제
 import React from 'react';
-import './login.css'
+import "./login_signin.css"
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { ToastContainer, toast } from "react-toastify";
@@ -60,7 +60,7 @@ class Longin extends React.Component{
             toast.error(<div><Error/><div className="toast"><p>아이디 중복체크를 하세요</p></div></div>);
         }
         else if(this.state.pwcheck===''){
-            toast.error(<div><Error/><div className="toast"><p>비밀번호 확이을 하세요.</p></div></div>);
+            toast.error(<div><Error/><div className="toast"><p>비밀번호 확인 하세요.</p></div></div>);
         }else if(this.state.check===false){
             toast.error(<div><Error/><div className="toast"><p>이메일 인증을 받으세요</p></div></div>);
         }
@@ -253,39 +253,42 @@ class Longin extends React.Component{
         const {onChange,onSubmit} = this;
         return(
             <div className="form" noValidate autoComplete="off">
-                <div className="titlea">
-                    <p>창원대의밤</p>
-                </div>
+                
                 <form onSubmit={onSubmit}>
                     <div className="idinput">
-                        <p>아이디</p>
+                        <p>아이디
                         <Checkbox checked={this.state.checking1} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
                         <TextField id="outlined-basic"variant="outlined"size="small" label="ID" type="text" name="id" value={id} onChange={onChange}/>
                         <Button variant="outlined" color="primary" onClick={this.checkid}>중복체크</Button>
+                        </p>
                     </div>
                     <div className="nickinput">
-                        <p>별명</p>
+                        <p>닉네임
                         <Checkbox checked={this.state.checking2} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
                         <TextField id="outlined-basic"variant="outlined"size="small" label="nickname" type="text" name="nickname" value={nickname} onChange={onChange}/>
                         <Button variant="outlined" color="primary" onClick={this.checknickname}>중복체크</Button>
+                        </p>
                     </div>
                     <div className="pwinput">
-                        <p>비밀번호 입력하세요</p>
+                        <p>비밀번호 입력
                         <TextField id="outlined-basic"variant="outlined"size="small" label="password"type="password" name="pw" value={pw} onChange={onChange} />
+                        </p>
                     </div>
                     <div className="pw2input">
-                        <p>비밀번호 확인하세요</p>
+                        <p>비밀번호 확인
                         <Checkbox checked={this.state.checking3} inputProps={{ 'aria-label': 'primary checkbox' }} color="primary"/>
                         <TextField id="outlined-basic"variant="outlined"size="small" label="password" type="password" name="pw2" value={pw2} onChange={onChange} />
                         <Button  variant="outlined" color="primary" onClick={this.checkpw}>확인</Button>
+                        </p>
                     </div>
                     <div className="emailinput">
-                        <p>이메일 인증</p>
+                        <p>이메일 인증
                         <TextField id="outlined-basic"variant="outlined"size="small" label="email" type="text" name="email" value={email} onChange={onChange} placeholder="e-mail"/>
                         <span className="changwonackr">
                             @changwon.ac.kr
                         </span>
                         <Button variant="outlined" color="primary" onClick={this.checkemail}>인증보내기</Button>
+                        </p>
                         <div className="emailsearch">
                             <Checkbox checked={this.state.checking4} inputProps={{ 'aria-label': 'primary checkbox' }}color="primary" />
                             <TextField id="outlined-basic"variant="outlined"size="small" label="인증번호" type="text" name="number" value={number} onChange={onChange} placeholder="6자리입력"/>

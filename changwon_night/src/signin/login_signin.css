@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap');
+
 .titlea{
    
     width: 400px;
@@ -14,18 +14,18 @@
 }
 
 .form{
-    width: 400px;
+    margin-left: 0px;
+    width: 500px;
     height: 577.600;
     background-color:  white;
-   
 }
 .idinput{
     
     width: 380px;
-    height: 60px;
+    height: 30px;
     margin-top: 10px;
     margin-left: 20PX;
-    margin-bottom: 10PX;
+    margin-bottom: 0PX;
     
 }
 .idinput input{
@@ -33,14 +33,11 @@
     margin-left: 0px;
 }
 .idinput p{
-    font-family: 'Jua', sans-serif;
-    margin-left: 45px;
-    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-bottom: 0px;
     margin-top: 0px;
-    color: #8e8e8e;
-}
-.idinput label{
-    font-family: 'Jua', sans-serif;
+    width: 500px;
+    color: #000000;
 }
 
 
@@ -51,16 +48,15 @@
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;
-    padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
+    padding-bottom: 0px;
 }
 .nickinput{
    
     width: 380px;
-    height: 60px;
-    margin-top: 10px;
+    height: 50px;
+    margin-top: 30px;
     margin-left: 20PX;
-    margin-bottom: 10PX;
+    margin-bottom: 0PX;
     
 }
 .nickinput input{
@@ -68,10 +64,10 @@
     margin-left: 0px;
 }
 .nickinput p{
-    font-family: 'Jua', sans-serif;
-    margin-left: 45px;
-    margin-bottom: 8px;
-    color: #8e8e8e;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    width: 500px;
+    color: #000000;
 }
 .nickinput label{
     font-size: 15px;
@@ -85,29 +81,29 @@
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
 }
 
 .pwinput{
    
     width: 300px;
-    height: 80px;
-    margin-top: 20px;
-    margin-left: 62px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
     
 }
 .pwinput p{
-    font-family: 'Jua', sans-serif;
     margin-left: 10px;
-    margin-bottom: 8px;
-    color: #8e8e8e;
+    margin-bottom: 10px;
+    width: 500px;
+    color: #000000;
 }
 .pw2input p{
-    font-family: 'Jua', sans-serif;
-    margin-left: 52px;
+    margin-left:10px;
     margin-bottom: 8px;
     margin-top: 1px;
-    color: #8e8e8e;
+    width: 550px;
+    color: #000000;
 }
 .pwinput label{
     font-weight: bold;
@@ -116,27 +112,23 @@
     font-weight: bold;
 }
 .pwinput input{
+    left: 40px;
     margin-left: 10px;
     height: 20px;
     width: 160px;
     background-color: white;
-    margin-left: 0px;
-
 }
 .pw2input{
    
     width: 380px;
-    height: 100px;
-    margin-top: 0px;
+    height: 50px;
+    margin-top: 10px;
     margin-left: 20PX;
     margin-bottom: 10PX;
 }
 .pw2input input{
-    margin-left: 10px;
-    height: 20px;
-    width: 160px;
+    margin-left: 20px;
     background-color: white;
-    margin-left: 0px;
 
 }
 .pw2input button{
@@ -146,23 +138,22 @@
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
 }
 
 .emailinput{
     
-    width: 340px;
-    height: 100px;
-    margin-top: 10px;
+    width: 380px;
+    height: 50px;
+    margin-top: 0px;
     margin-left: 20PX;
     margin-bottom: 10PX;
 }
 .emailinput p{
-    font-family: 'Jua', sans-serif;
     margin-left: 10px;
-    margin-bottom: 15px;
-    margin-top: 1px;
-    color: #8e8e8e;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    width: 550px;
+    color: #000000;
 }
 .emailinput input{
     width: 98px;
@@ -180,11 +171,10 @@
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
 }
 
 .emailsearch{
-    margin-top: 20px;
+    margin-top: 10px;
     
 }
 .emailsearch Button{
@@ -193,29 +183,23 @@
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
 }
 .changwonackr{
     margin-left: 13px;
     width: 125px;
     height: 20px;
-    font-size: 14px;
+    font-size: 25px;
     margin-left: 10px;
-    font-family: 'Jua', sans-serif;
 }
-.changwonackr p{
-   
-    
-}
+ 
 #submit{
-    margin-top: 25px;
-    margin-left: 330px;
+    margin-top: 30px;
+    margin-left: 430px;
     margin-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
-    font-family: 'Jua', sans-serif;
     width: 70px;
     height: 40px;
 }
@@ -230,7 +214,6 @@
 #pwdiv p{
     margin-top: 3px;
     margin-left: 10px;
-    font-family: 'Jua', sans-serif;
     font-size: 13px;
 }
 .toast {

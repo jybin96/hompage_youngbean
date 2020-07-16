@@ -10,7 +10,9 @@ class Home2 extends React.Component{
             <div>
                 <Top_AppBar/>
                 <div className="toptop">
-
+                    <div>
+                        <p>자유 게시판</p>
+                    </div>
                 </div>
                 <div className="midmid">
                     <Search/>

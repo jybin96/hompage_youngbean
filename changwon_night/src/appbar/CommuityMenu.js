@@ -11,6 +11,7 @@ import { render } from '@testing-library/react';
 import Popover from '@material-ui/core/Popover';
 import './appbar.css';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 const styles  = {
   paper: {
     height : "auto",
@@ -87,11 +88,11 @@ class CommuityMenu extends Component {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>자유게시판</MenuItem>
-                    <MenuItem onClick={handleClose}>익명게시판</MenuItem>
-                    <MenuItem onClick={handleClose}>새내기게시판</MenuItem>
-                    <MenuItem onClick={handleClose}>연예상담소</MenuItem>
-                    <MenuItem onClick={handleClose}>정치게시판</MenuItem>
+                    <MenuItem><Link to="free">자유게시판</Link></MenuItem>
+                    <MenuItem ><Link to="none">익명게시판</Link></MenuItem>
+                    <MenuItem><Link to="new">새내기게시판</Link></MenuItem>
+                    <MenuItem ><Link to="love">연애상담소</Link></MenuItem>
+                    <MenuItem ><Link to="politic">정치게시판</Link></MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

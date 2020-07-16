@@ -1,0 +1,51 @@
+#pin_main{
+    
+    height: 200px;
+    width: 200px;
+}
+#pin_title{
+ 
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
+#pin_title p{
+    margin-top: 10px;
+    font-weight: bold;
+}
+#pin_image{
+    border-top: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(216, 216, 216);
+    width: 200px;
+    height: 140px;
+}
+#pin_love{
+    
+    width: 100px;
+    height: 35px;
+    float: left;
+    text-align: center;
+    background-color: rgb(247, 233, 243);
+}
+#pin_body{
+   
+    width: 98px;
+    margin-left: 2px;
+    height: 35px;
+    float: right;
+    text-align: center;
+    background-color: rgb(222, 231, 247);
+}
+#pin_body p{
+    margin-top: 5px;
+    font-weight: bold;
+
+}
+#pin_love p{
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+
+

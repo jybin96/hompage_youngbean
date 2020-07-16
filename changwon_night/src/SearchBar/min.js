@@ -12,6 +12,7 @@ import StarIcon from "@material-ui/icons/Star"
 class Search extends React.Component {
 
 
+
     render() {
         return (
             <div>
@@ -25,11 +26,10 @@ class Search extends React.Component {
 
                     <FormControl className="select">
                         <select className='searchType'>
-                            <option aria-label="None" value="" />
                             <option value={10}>내용</option>
                             <option value={20}>제목</option>
                             <option value={20}>글쓴이</option>
-                            <option value={30} selected="selected">제목+내용</option>
+                            <option value={30}>제목+내용</option>
                         </select>
         </FormControl>
 

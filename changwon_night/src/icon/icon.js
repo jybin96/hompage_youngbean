@@ -19,6 +19,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Badge from '@material-ui/core/Badge';
+import Profile_check from './profile/profile_check';
 class Icon extends React.Component{
     constructor(props){
         super(props);
@@ -64,27 +65,13 @@ class Icon extends React.Component{
                     <IconButton  color="inherit" onClick={this.handleClickOpen} >
                         <AccountCircle />
                     </IconButton>
-                    <Dialog
-                        open={this.state.open2}
-                        onClose={this.handleClose}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                    >
-                        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
-                        <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
-                            Let Google help apps determine location. This means sending anonymous location data to
-                            Google, even when no apps are running.
-                        </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
-                            Disagree
-                        </Button>
-                        <Button onClick={this.handleClose} color="primary" autoFocus>
-                            Agree
-                        </Button>
-                        </DialogActions>
+                    <Dialog open={this.state.open2} onClose={this.handleClose2} aria-labelledby="form-dialog-title" className="profile_check_button">
+                    <DialogContent>
+                    <Profile_check/>
+                    </DialogContent>                                 
+                    <DialogActions>                
+                    <Button className = "cancel"variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
+                    </DialogActions>
                     </Dialog>
                 </div>
                 <Emailmodal/>

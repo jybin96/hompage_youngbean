@@ -1,19 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap');
-.logbox{
-    border: 1px;
-    width: 408.200px;
-    height: 437px;
-    
-    
-}
+
 .logbox p{
-    width: 150px;
+    width: 300px;
     margin-top: 0px;
-    margin-left: 130px;
+    margin-left: 10px;
     margin-right:0px ;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     font-family: 'Gamja Flower', cursive;
-    font-size: 35px;
+    font-size: 30px;
 }
 .id{
     margin-bottom: 10px;
@@ -116,6 +109,9 @@
     height: 100px;
     width: 550px;
     float: left;
+}
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.MuiPaper-elevation24.MuiPaper-rounded {
+    max-width: 680px;
 }
 .pp p{
     margin-top: 0px;

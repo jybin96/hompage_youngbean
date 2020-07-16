@@ -11,6 +11,7 @@ import { render } from '@testing-library/react';
 import Popover from '@material-ui/core/Popover';
 import './appbar.css';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 const styles  = {
   paper: {
     height : "auto",
@@ -86,9 +87,9 @@ class NoticeMenu extends Component {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>창밤 공지사항</MenuItem>
-                    <MenuItem onClick={handleClose}>학교 공지사항</MenuItem>
-                    <MenuItem onClick={handleClose}>학과 공지사항</MenuItem>
+                    <MenuItem><Link to="공지사항">창밤 공지사항</Link></MenuItem>
+                    <MenuItem ><Link to="학교공지사항">학교 공지사항</Link></MenuItem>
+                    <MenuItem onClick={handleClose}>학과 바로가기</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

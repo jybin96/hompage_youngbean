@@ -10,8 +10,10 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import congratulation from './party/congratulation.png';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Error from '@material-ui/icons/Error';
-import Check from '@material-ui/icons/Check';
+import Tab from '@material-ui/core/Tab';
+import TabPanel from '@material-ui/lab/TabPanel';
+import TabList from '@material-ui/lab/TabList';
+import TabContext from '@material-ui/lab/TabContext';
 
 class Login extends React.Component{
     constructor(props){
@@ -22,13 +24,15 @@ class Login extends React.Component{
             nickname:'',
             admin:false,
             open:false,
-            signin:false
+            signin:false,
+            value: '0',
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.handleopen = this.handleopen.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handlesub = this.handlesub.bind(this);
+        this.handleChange = this.handleChange.bind(this);   
     }
 
     onChange(e){
@@ -84,7 +88,8 @@ class Login extends React.Component{
        
         this.setState({
             open:false,
-            signin:false
+            signin:false,
+            value:"0"
         })
       }
       handlesub(){
@@ -94,14 +99,35 @@ class Login extends React.Component{
             signin:true
         })
       }
+      handleChange(event,newValue) {
+          this.setState({
+              value: newValue
+          })
+      }
+     
     render(){
         const {id,pw} = this.state;
-        const {onChange,onSubmit,handleopen,handleClose,handlesub} = this;
+        const {onChange,onSubmit,handleopen,handleClose,handlesub,handleChange,a11yProps} = this;
         return(
-            
+            <div id="tabcontext" >
+            <TabContext value={this.state.value} >
             <div className="logbox">
-                <p>창원대의밤</p>
-                <div className="idpwbox">  
+                    <TabList
+                            value = {this.state.value}
+                            onChange={handleChange}
+                            indicatorColor="primary"
+                            textColor="primary"
+                            variant="fullWidth"
+                            aria-label="action tabs example"
+                    >
+                            <Tab label="로그인"  value="0"/>
+                            <Tab label="회원가입" value="1"/>
+                            <Tab label="아이디 찾기"  value="2"/>
+                            <Tab label="비밀번호 찾기"value="3"/>
+                    </TabList>
+                <DialogContent>
+                <div >  
+                <TabPanel value="0">
                     <form onSubmit={onSubmit}>
                         <div className="id">
                             <p>아이디 입력하세요</p>
@@ -111,17 +137,14 @@ class Login extends React.Component{
                             <p>패스워드 입력하세요</p>
                             <TextField id="outlined-basic"variant="outlined"size="small" label="password" type="password"  name="pw"  value={pw} onChange={onChange}/> 
                         </div>
-                        <Button variant="contained" color="primary" type="submit">로그인</Button>
+                        <DialogActions>
+                            <Button variant="contained" color="primary" type="submit">로그인</Button>
+                        </DialogActions>
                     </form>
-                       
-                    <ul id="sign">
-                        <li>
-                        <Button variant="contained" color="primary" onClick={handleopen}>회원가입</Button>
-                        <Dialog open={this.state.open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                            <DialogContent>
-                                <Longin handlesub={handlesub}/>
-                            </DialogContent>
-                        </Dialog>
+                </TabPanel>   
+                <TabPanel value="1">   
+                        <Longin handlesub={handlesub}/>
+                        
                         <Dialog open={this.state.signin} onClose={handleClose} aria-labelledby="form-dialog-title">
                             <DialogContent>
                             <DialogContentText id="alert-dialog-description">
@@ -133,26 +156,47 @@ class Login extends React.Component{
                                     </div>
                                 </div>
                                 <div className="pp2">
-                                    <p id="dialog">창원의 밤 회원가입을 진심으로 축하드립니다 이제 창원의 밤 커뮤니티를 마음껏 즐기세요.</p>
+                                    <p id="dialog">창원대의 밤 회원가입을 진심으로 축하드립니다 이제 창원대의 밤 커뮤니티를 마음껏 즐기세요.</p>
                                 </div>      
                             </DialogContentText>
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={handleClose} variant="contained" color="primary">
-                                <p>확인</p>
+                                    <p>확인</p>
                                 </Button>
                             </DialogActions>
                         </Dialog>
-                        </li>
-                        <li>
-                        <Button variant="contained" color="primary">ID/PW찾기</Button>
-                        </li>
-                        <li>
-                        
-                        </li>
-                    </ul>
+                </TabPanel>
+                <TabPanel value="2">
+                    <form onSubmit={onSubmit}>
+                        <div className="id">
+                            <p>E-mail 입력하세요</p>
+                            <TextField id="outlined-basic"variant="outlined"size="small" label="E-mail" type="text"  name="id"  value={id} onChange={onChange}/>
+                        </div>                     
+                        <DialogActions>
+                            <Button variant="contained" color="primary" type="submit">아이디찾기</Button>
+                        </DialogActions>
+                    </form>
+                </TabPanel>
+                <TabPanel value="3">
+                    <form onSubmit={onSubmit}>
+                        <div className="id">
+                            <p>E-mail 입력하세요</p>
+                            <TextField id="outlined-basic"variant="outlined"size="small" label="E-mail" type="text"  name="id"  value={id} onChange={onChange}/>
+                        </div>                     
+                        <div className="pw">
+                            <p>아이디 입력하세요</p>
+                            <TextField id="outlined-basic"variant="outlined"size="small" label="password" type="password"  name="pw"  value={pw} onChange={onChange}/> 
+                        </div>
+                        <DialogActions>
+                            <Button variant="contained" color="primary" type="submit">비밀번호 찾기</Button>
+                        </DialogActions>
+                    </form>
+                </TabPanel>   
                 </div>
-                
+                </DialogContent>   
+            </div>
+            </TabContext>
             </div>
         )
     }

@@ -18,6 +18,8 @@ import EmploymentMenu from './EmploymentMenu';
 import './appbar.css';
 import Switchbar from '../icon/switchbar';
 import jQuery from "jquery";
+import Realtitle from './realtitle.png';
+import { Link } from 'react-router-dom';
 
 
 class Top_AppBar extends Component {
@@ -31,12 +33,12 @@ class Top_AppBar extends Component {
   render(){
     const {classes} = this.props;
   return (
-    <div>
+    <div className="app_main">
     <AppBar position="fixed" className="header"> 
       <Toolbar variant="regular" >
-          <Typography variant="h6" color="inherit">
-            창원대의 밤
-          </Typography>
+            <Link to="/"><img src={Realtitle}  width="200px" height="40px"/></Link>
+            
+          
           <CommuityMenu />
           <CampusMenu/>
           <ImformationMenu/>

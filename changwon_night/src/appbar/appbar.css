@@ -2,6 +2,18 @@
     width: auto;
     left: 0px;
 }
+.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.header.mui-fixed.MuiPaper-elevation4 {
+    color: white;
+    background-color: #000544;
+}
+.app_main img{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
 .campus .MuiButton-label {
   
     display: inherit;

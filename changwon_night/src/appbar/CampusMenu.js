@@ -11,6 +11,7 @@ import { render } from '@testing-library/react';
 import Popover from '@material-ui/core/Popover';
 import './appbar.css';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const styles  = {
   paper: {
@@ -88,9 +89,9 @@ class CampusMenu extends Component {
                   <Paper>
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList autoFocusItem={this.state.open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                        <MenuItem onClick={handleClose}>너나의 동료가되라</MenuItem>
-                        <MenuItem onClick={handleClose}>동아리홍보</MenuItem>
-                        <MenuItem onClick={handleClose}>지도</MenuItem>
+                        <MenuItem ><Link to="/study">스터디그룹</Link></MenuItem>
+                        <MenuItem><Link to="/club">동아리홍보</Link></MenuItem>
+                        <MenuItem><Link to="/meeting">과팅</Link></MenuItem>
                         <MenuItem onClick={handleClose}>학식표</MenuItem>
                       </MenuList>
                     </ClickAwayListener>

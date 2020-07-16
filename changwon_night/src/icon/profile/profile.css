@@ -1,0 +1,119 @@
+.profile_card{
+    width: 300px;
+    height: 400px;
+}
+.profile_card .MuiCardMedia-root.profile_image {
+    border: solid 5px #ddd;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+    top: 82px;
+    left: 91px;
+    height:100px;
+    width:100px;
+}
+.profile_card_change .profile_image{
+    border: solid 5px #ddd;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+    top: 82px;
+    left: 112px;
+    height:100px;
+    width:100px;
+}
+.profile_card .MuiCardMedia-root.backgroundimage{
+    z-index: 2;
+    height: 150px;
+}
+
+.profile_card .MuiCardContent-root.nickname_and_statemessage{
+    position: absolute;
+    top:200px;
+    margin-left: 16px;
+    width: 268px;
+    padding:0;
+}
+
+.profile_card .profile_button{
+    position: absolute;
+    top:350px;
+    left:70px;
+}
+.profile_card .profile_button .modify{
+   margin-right: 40px;
+  
+}
+
+.profile_check_button .MuiDialogContent-root {
+    flex: 1 1 auto;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.profile_check_button .MuiDialogContent-root:first-child {
+    padding-top: 0px;
+}
+.profile_check_button .cancel{
+    position: absolute;
+    top :350px;
+    left: 180px;
+}
+.profile_change_button .cancel{
+    position: absolute;
+    top:435px;
+    right:57px;
+}
+.profile_card_change .profile_nickname_and_statemessage{    
+    position: absolute;
+    top: 198px;
+    left: 0px;
+    right: 0px;
+
+}
+.profile_card_change .profile_nickname_and_statemessage .nickinput{
+    width:350px;
+    margin-left: 0px;
+}
+
+.profile_card_change .profile_card{
+    width: 350px;
+    height: 500px;
+}
+.profile_change_button .MuiDialogContent-root{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+
+}
+.profile_change_button .MuiDialogContent-root:first-child{
+    padding-top: 0px;
+}
+.profile_change_button{
+    position: absolute;
+    top:435px;
+    margin-left: 59px;
+}
+
+.profile_card_change hr{
+    width:300px;
+    margin-left: 20px;
+}
+.profile_card_change .statemessage{
+    position: absolute;
+    top:100px;
+    left: 40px;
+    
+}
+.statemessage .MuiInputBase-root{
+    position: relative;
+}
+.statemessage textarea{
+    width:240px;
+}
