@@ -44,6 +44,14 @@ class Switchbar extends React.Component{
         this.handleClose = this.handleClose.bind(this);
         this.handleClose2 = this.handleClose2.bind(this);
         this.handleClickOpen = this.handleClickOpen.bind(this);
+        
+    }
+    componentDidMount(){
+       this.setState({
+           open: this.props.open,
+           checklogin:this.props.checklogin,
+           auth:this.props.auth
+       })
     }
     handleChange (e) {
         if(this.state.auth===true){
@@ -52,6 +60,8 @@ class Switchbar extends React.Component{
                 open:false,
                 auth:false
             })
+            localStorage.setItem("admin",false);
+            console.log(localStorage.getItem("admin"));
             
         }else{
             this.setState({                //여기에 로그인
@@ -59,6 +69,7 @@ class Switchbar extends React.Component{
                 open:true,
                 
             })
+            localStorage.setItem("admin",false);
         }
       };
       handleChange2(e) {   

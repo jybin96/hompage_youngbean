@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 import Top_AppBar from './appbar/appbar';
+import Postbody from './post/post';
 import './home2.css';
 import Search from './SearchBar/min';
 import NestedList from './menulist/Board_list';
-import Griddongali from './gridmarket/gridd';
-import Button from '@material-ui/core/Button';
-
-
-class Club extends React.Component{
+class Makemarket extends React.Component{
     render(){
         return(
             <div>
                 <Top_AppBar/>
                 <div className="toptop">
                     <div>
-                        <p>동아리 홍보</p>
+                        <p>꼰대 게시판</p>
                     </div>
                 </div>
                 <div className="midmid">
                     <Search/>
                 </div>
                 <div className="bmbm">
-                    <Button ariant="outlined" color="primary" id="market_button" href="/7">만들기</Button>
-                    <Griddongali/>
+                
                 </div>
                 <div className="cdcd">
                    
@@ -35,4 +31,4 @@ class Club extends React.Component{
     }
 }
 
-export default Club;
+export default Makemarket;

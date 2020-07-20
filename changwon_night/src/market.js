@@ -5,6 +5,8 @@ import './home2.css';
 import Search from './SearchBar/min';
 import NestedList from './menulist/Board_list';
 import Gridmarket from './gridmarket/gridm';
+import Button from '@material-ui/core/Button';
+
 class Market extends React.Component{
     render(){
         return(
@@ -19,6 +21,7 @@ class Market extends React.Component{
                     <Search/>
                 </div>
                 <div className="bmbm">
+                    <Button ariant="outlined" color="primary" id="market_button" href="/6">만들기</Button>
                     <Gridmarket/>
                 </div>
                 <div className="cdcd">

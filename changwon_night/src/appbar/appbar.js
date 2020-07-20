@@ -23,12 +23,36 @@ import { Link } from 'react-router-dom';
 
 
 class Top_AppBar extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      checklogin:false,
+          open:false,
+          auth:false
+    }
+  }
   
-  componentDidMount(){
+  componentWillMount(){
+    
     window.$ = window.jQuery = jQuery;
     window.$(window).scroll(function() {
       window.$('.header').css({left: 0 - window.$(this).scrollLeft()});
   });
+  const user = localStorage.getItem('admin')
+  console.log(user);
+  if(user==='true'){
+      this.setState({
+          checklogin:true,
+          auth:true
+      })
+      console.log(this.state.open);
+  }else{
+    this.setState({
+      checklogin:false,
+      auth:false
+  })
+  }
+ 
   }
   render(){
     const {classes} = this.props;
@@ -47,7 +71,7 @@ class Top_AppBar extends Component {
 
           <span className="switchbar">
           <MenuItem>
-          <Switchbar/>
+          <Switchbar checklogin={this.state.checklogin} open= {this.state.open} auth={this.state.auth}/>
           </MenuItem>
           </span>
         

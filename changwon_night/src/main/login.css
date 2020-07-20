@@ -140,3 +140,8 @@
     font-size: 20px;
     font-family: 'Jua', sans-serif;
 }
+.email_idfound{
+    position: relative;
+    float: right;
+    margin-right: 160px;
+}
